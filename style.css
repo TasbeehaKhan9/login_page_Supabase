@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+.back-div {
+  background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00NTYtMDA3XzEuanBn.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glass Form */
+.login-form {
+  width: 420px;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.20);
+  text-align: center;
+}
+
+/* Title */
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.form-subtitle {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* Floating Input Container */
+.float-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.float-container input {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 2px solid #ccd7f1;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  outline: none;
+  transition: 0.3s;
+}
+
+.float-container input::placeholder {
+  color: transparent;
+}
+
+/* Labels */
+.float-container label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  color: #666;
+  background: transparent;
+  padding: 0 4px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+/* Move label when typing/focused */
+.float-container input:focus+label,
+.float-container input:not(:placeholder-shown)+label {
+  top: -10px;
+  left: 10px;
+  font-size: 13px;
+  color: #3b6dd8;
+  background: white;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #5C27FE, #D57A06);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(92, 39, 255, 0.3);
+}
+
+/* OR Divider */
+.or-text {
+  margin: 20px 0 10px;
+  font-weight: 600;
+  color: #444;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Google Button */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.google-btn img {
+  width: 22px;
+}
+
+/* Signup Link */
+.signup-text {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #5C27FE;
+  font-weight: 600;
+  text-decoration: none;
+}

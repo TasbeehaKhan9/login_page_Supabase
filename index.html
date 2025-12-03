@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="back-div">
+    <div class="main-container">
+      <form class="login-form" id="myForm">
+
+        <h2 class="form-title">Welcome Back</h2>
+        <p class="form-subtitle">Login to continue</p>
+
+        <div class="float-container">
+          <input id="exampleInputEmail1" type="text" required placeholder=" " />
+          <label>Email Address</label>
+          <p id="emailError" class="error"></p>
+        </div>
+
+        <div class="float-container">
+          <input id="exampleInputPassword1" type="password" required placeholder=" " />
+          <label>Password</label>
+          <p id="passwordError" class="error"></p>
+        </div>
+
+        <button type="submit" id="submit" class="login-btn">Login</button>
+
+        <p class="or-text">OR</p>
+
+        <button class="google-btn">
+          <img src="https://www.svgrepo.com/show/355037/google.svg" />
+          Continue with Google
+        </button>
+
+        <p class="signup-text">
+          Don’t have an account? <a href="#">Register</a>
+        </p>
+
+      </form>
+    </div>
+
+
+
+  </div>
+
+
+
+  <script type="module" src="config.js" defer></script>
+  <script type="module" src="script.js" defer></script>
+</body>
+
+</html>
