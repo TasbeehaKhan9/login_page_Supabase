@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <div class="back-div">
+    <div class="main-container">
+      <form class="login-form" id="myForm2">
+
+        <h2 class="form-title">Welcome!</h2>
+        <p class="form-subtitle">Please Enter the folslowing Details</p>
+
+        <div class="float-container">
+          <input id="exampleInputEmaillogin" type="text" required placeholder=" " />
+          <label>Email Address</label>
+          <p id="emailError" class="error"></p>
+        </div>
+
+        <div class="float-container">
+          <input id="exampleInputPasswordlogin" type="password" required placeholder=" " />
+          <label>Password</label>
+          <p id="passwordError" class="error"></p>
+        </div>
+
+        <button type="submit" id="submit" class="login-btn">Login In</button>
+
+    
+
+        <p class="signup-text">
+          Don't have an account?<a href="index.html">Sign In</a>
+        </p>
+
+      </form>
+    </div>
+
+
+
+  </div>
+
+    <script type="module" src="config.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

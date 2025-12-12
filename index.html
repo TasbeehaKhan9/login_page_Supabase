@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>SignIn Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,8 +14,14 @@
     <div class="main-container">
       <form class="login-form" id="myForm">
 
-        <h2 class="form-title">Welcome Back</h2>
-        <p class="form-subtitle">Login to continue</p>
+        <h2 class="form-title">Welcome!</h2>
+        <p class="form-subtitle">Please Enter the following Details</p>
+
+
+        <div class="float-container">
+          <input id="userName" type="text" required placeholder=" " />
+          <label>Username</label>
+        </div>
 
         <div class="float-container">
           <input id="exampleInputEmail1" type="text" required placeholder=" " />
@@ -29,7 +35,7 @@
           <p id="passwordError" class="error"></p>
         </div>
 
-        <button type="submit" id="submit" class="login-btn">Login</button>
+        <button type="submit" id="submit" class="login-btn">Sign In</button>
 
         <p class="or-text">OR</p>
 
@@ -39,7 +45,7 @@
         </button>
 
         <p class="signup-text">
-          Don’t have an account? <a href="#">Register</a>
+          already have an account?<a href="login.html">Login In</a>
         </p>
 
       </form>

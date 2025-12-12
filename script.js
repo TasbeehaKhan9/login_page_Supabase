@@ -1,6 +1,9 @@
 import supabase from "./config.js";
 
 
+
+
+let userName = document.getElementById('name')
 let email = document.getElementById("exampleInputEmail1");
 let password = document.getElementById("exampleInputPassword1");
 let form = document.getElementById("myForm");
@@ -37,8 +40,14 @@ form.addEventListener("submit", async (e) => {
 
      try {
           const { data, error } = await supabase.auth.signUp({
-               email: userEmail,
-               password: userPassword
+               email: userEmail.value,
+               password: userPassword.value,
+
+               options: {
+                    data: {
+                         userName: userName.value
+                    }
+               }
           });
 
           if (error) {
@@ -57,5 +66,13 @@ form.addEventListener("submit", async (e) => {
 });
 
 
+let name = document.getElementById('new')
+async function Profile(params) {
+  const { data, error } = await supabase.auth.getUser()
 
+  name.innerHTML = data.user.user_metadata.userName
+  
+}
+
+Profile()
 
