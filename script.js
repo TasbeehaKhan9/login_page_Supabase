@@ -2,13 +2,16 @@ import supabase from "./config.js";
 
 
 
-
-let userName = document.getElementById('name')
+document.addEventListener("DOMContentLoaded", () => {
+let userName = document.getElementById('userName')
 let email = document.getElementById("exampleInputEmail1");
 let password = document.getElementById("exampleInputPassword1");
 let form = document.getElementById("myForm");
-let emailError = document.getElementById("emailError");
-let passwordError = document.getElementById("passwordError");
+// let emailError = document.getElementById("emailError");
+// let passwordError = document.getElementById("passwordError");
+
+
+if(!form) return;
 
 form.addEventListener("submit", async (e) => {
      e.preventDefault();
@@ -40,8 +43,8 @@ form.addEventListener("submit", async (e) => {
 
      try {
           const { data, error } = await supabase.auth.signUp({
-               email: userEmail.value,
-               password: userPassword.value,
+               email: userEmail,
+               password: userPassword,
 
                options: {
                     data: {
@@ -57,8 +60,8 @@ form.addEventListener("submit", async (e) => {
 
           console.log("UserData:", data);
 
-
-          email.value = "";
+          userName.value = "",
+          email.value = "",
           password.value = "";
      } catch (err) {
           console.log("Error:", err);
@@ -66,13 +69,21 @@ form.addEventListener("submit", async (e) => {
 });
 
 
-let name = document.getElementById('new')
-async function Profile(params) {
-  const { data, error } = await supabase.auth.getUser()
+    async function Profile() {
+        const name = document.getElementById("new");
+        if (!name) return;
 
-  name.innerHTML = data.user.user_metadata.userName
-  
-}
+        // Step 1: localStorage se username fetch karo
+        const userName = localStorage.getItem("userName") || "User";
+        name.innerHTML = userName;
 
-Profile()
+        // Step 2: optional - Supabase se bhi check kar sakte ho
+        const { data, error } = await supabase.auth.getUser();
+        if (!error && data.user) {
+            name.innerHTML = data.user.user_metadata.userName || userName;
+            console.log(data.user);
+        }
+    }
+Profile();
+});
 

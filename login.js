@@ -19,8 +19,16 @@ async function login(e){
   email: lemail.value,
   password: lpassword.value,
 })
-if(data){
-    console.log(data)
+
+
+if(error){
+    console.log("login Error;" , error.message);
+ return;
+}
+
+
+if(data.user){
+            localStorage.setItem("userName", data.user.user_metadata.userName);
     location.href = "profile.html"
 }
 
