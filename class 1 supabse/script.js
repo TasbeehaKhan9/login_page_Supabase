@@ -2,7 +2,7 @@ import supabase from "./config.js";
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
+
      let userName = document.getElementById('userName')
      let email = document.getElementById("exampleInputEmail1");
      let password = document.getElementById("exampleInputPassword1");
@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
      let emailError = document.getElementById("emailError");
      let passwordError = document.getElementById("passwordError");
 
-     if (!form) return;
 
-     form.addEventListener("submit", async (e) => {
+
+    form &&  form.addEventListener("submit", async (e) => {
           e.preventDefault();
           emailError.textContent = "";
           passwordError.textContent = "";
@@ -85,11 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const { data, error } = await supabase.auth.getUser();
           if (!error && data.user) {
-               name.textContent = data.user.user_metadata?.userName || name.textContent;
           }
      }
+
+
      Profile();
-});
+
 
 
 
