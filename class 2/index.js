@@ -139,23 +139,23 @@ Profile();
 
 
 
-// let btnn = document.getElementById('logoutBtn');
-// btnn.addEventListener('click',async function() {
+let btnn = document.getElementById('logoutBtn');
+btnn.addEventListener('click',async function() {
 
-// if(confirm("Are you sure you want to logout?")) {
+if(confirm("Are you sure you want to logout?")) {
 
-//     const { error } = await supabase.auth.signOut();
-//     if(error){
-//    console.log(error.message);
+    const { error } = await supabase.auth.signOut();
+    if(error){
+   console.log(error.message);
    
-//     }else{
-//       location.href = 'index.html';
-//     }
-//    } else {
+    }else{
+      location.href = 'index.html';
+    }
+   } else {
         
-//         console.log("Logout cancelled");
-//     }
-// });
+        console.log("Logout cancelled");
+    }
+});
 
 
 
