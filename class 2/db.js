@@ -101,14 +101,12 @@ async function showAllTodos(todos){
 </div>` 
   });
 }
-window.edtTodo = (id,tit,desc,prior)=>{
-  console.log(id,tit,desc,prior);
+window.edtTodo = (id,tit,desc,priority)=>{
+  console.log(id,desc,tit,priority);
   title.value = tit;
   description.value = desc;
-  priority.forEach( p =>{
-    console.log(P);
-    
-    p.checked = p.value === priority
+  prior.forEach( pr =>{    
+    pr.checked = pr.value === priority
   })
 
 todoBtn.innerHTML = " Edit todo"
